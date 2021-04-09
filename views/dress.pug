@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Dresses are very important in everyones life.
+  div(class="container-fluid")
+        div(class="row")
+ 
+            -  
+               let dress = results       
+            each k in dress
+                div(class="col-sm-2") #{k.name}
+                br
+                div(class="col-sm-2") #{k.cost}
+                div(class="col-sm-2") #{k.brand}
