@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+
+  - let dressid = toShow._id
+  - let dressname = toShow.dressaname
+  - let dresscost = toShow.cost
+  - let dressbrand = toShow.brand
+  div
+    div.row
+      div(class='dressAttr mr-3') Dress ID is:
+      div #{dressid}
+    div.row
+      div(class='dressAttr mr-3') Dress Name is:
+      div #{dressname}
+    div.row
+      div(class='dressAttr mr-3') Dress Cost is:
+      div #{dresscost}
+    div.row
+      div(class='dressAttr mr-3') Dress Brand is:
+      div #{dressbrand}
