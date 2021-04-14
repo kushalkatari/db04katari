@@ -11,7 +11,7 @@ mongoose.connect(connectionString,
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var DressesRouter = require('./routes/dress');
+var DressRouter = require('./routes/Dress');
 var starsRouter = require('./routes/stars');
 var slotsRouter = require('./routes/slots');
 var Dress = require("./models/dress");
@@ -70,7 +70,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/Dresses', DressesRouter);
+app.use('/Dress', DressRouter);
 app.use('/stars', starsRouter);
 app.use('/slots', slotsRouter);
 app.use('/', resourceRouter);
