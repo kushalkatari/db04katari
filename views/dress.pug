@@ -9,10 +9,13 @@ block content
    div(class="row m-1")
     each form in dress
      - let destination=`buy(\"/dress/update?id=${form._id}\")`
-     
-     div(class="col-sm-6 bg-warning m-1 p-3") Dress #{form.name} - #{form.cost} - #{form.brand}
+     - let detail=`buy(\"/dress/detail?id=${form._id}\")`
+     - let del=`buy(\"/dress/delete?id=${form._id}\")`
+     div(class="col-sm-6 bg-warning m-1 p-3") dress #{form.name} - #{form.cost} - #{form.brand}
       button.btn( class="btn-primary ml-2", onclick=destination ) Update
-      
+      button.btn( class="btn-dark ml-2", onclick=detail ) Get Detail
+      button.btn( class="btn-danger ml-2", onclick=del ) Delete
+  
    script.
     function buy(path){
         window.location.href=path
