@@ -1,15 +1,21 @@
 extends layout
 
 block content
+ - let create = `dispatch(\"dress/create\")`
+  button.btn(class="btn-success m1-1", onclick=create) Create
   h1= title
-  p Dresses are very important in everyones life.
-  div(class="container-fluid")
-        div(class="row")
- 
-            -  
-               let dress = results       
-            each k in dress
-                div(class="col-sm-2") #{k.name}
-                br
-                div(class="col-sm-2") #{k.cost}
-                div(class="col-sm-2") #{k.brand}
+  - let dress=results;
+  div(class="container-fluid mt-3")
+   div(class="row m-1")
+    each form in dress
+     - let destination=`buy(\"/dress/update?id=${form._id}\")`
+     
+     div(class="col-sm-6 bg-warning m-1 p-3") Dress #{form.name} - #{form.cost} - #{form.brand}
+      button.btn( class="btn-primary ml-2", onclick=destination ) Update
+      
+   script.
+    function buy(path){
+        window.location.href=path
+
+        //alert(`You purchased Item ${a+1}`)
+      }

@@ -61,7 +61,7 @@ exports.dress_update_put = async function(req, res) {
 exports.dress_view_all_Page = async function(req, res) {
     try{
     theDress = await Dress.find();
-    res.render('drees', { title: 'Dress Search Results', results: theDress });
+    res.render('dress', { title: 'Dress Search Results', results: theDress });
     }
     catch(err){
     res.error(500,`{"error": ${err}}`);
